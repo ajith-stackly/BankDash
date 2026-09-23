@@ -104,19 +104,19 @@ function loadLoans() {
 function LoanTypeCard({
   item
 }) {
-  return <div className="h-[72px] sm:h-[85px] lg:h-[90px] xl:h-[120px] rounded-[12px] sm:rounded-[15px] lg:rounded-[20px] xl:rounded-[25px] bg-white flex items-center px-[10px] sm:px-[17px] lg:px-5 xl:px-6 min-w-0 transition-shadow hover:shadow-[0_4px_20px_rgba(20,20,50,0.08)]">
-      <div className="shrink-0 w-[34px] h-[34px] sm:w-[45px] sm:h-[45px] xl:w-[70px] xl:h-[70px] rounded-full flex items-center justify-center" style={{
+  return <div className="h-[72px] sm:h-[85px] lg:h-[90px] xl:h-[120px] w-full rounded-[12px] sm:rounded-[15px] lg:rounded-[18px] xl:rounded-[25px] bg-white flex items-center px-[10px] sm:px-[17px] lg:px-2 xl:px-3 min-w-0 transition-shadow hover:shadow-[0_4px_20px_rgba(20,20,50,0.08)]">
+      <div className="shrink-0 w-[34px] h-[34px] sm:w-[45px] sm:h-[45px] lg:w-[42px] lg:h-[42px] xl:w-[70px] xl:h-[70px] rounded-full flex items-center justify-center" style={{
       background: item.bg,
       color: item.color
     }}>
-        <FontAwesomeIcon icon={item.icon} className="text-[14px] sm:text-[18px] xl:text-[28px]" />
+        <FontAwesomeIcon icon={item.icon} className="text-[14px] sm:text-[18px] lg:text-[16px] xl:text-[28px]" />
       </div>
 
-      <div className="ml-[8px] sm:ml-[14px] xl:ml-[20px] min-w-0">
-        <p className="m-0 font-[Inter] text-[10px] leading-[12px] sm:text-[12px] sm:leading-[15px] xl:text-[16px] xl:leading-[19px] text-[#718EBF] truncate">
+      <div className="ml-[8px] sm:ml-[14px] lg:ml-[10px] xl:ml-[20px] min-w-0 flex-1">
+        <p className="m-0 font-[Inter] text-[10px] leading-[12px] whitespace-nowrap overflow-hidden text-ellipsis sm:text-[12px] sm:leading-[15px] lg:text-[11px] lg:leading-[13px] xl:text-[14px] xl:leading-[17px] text-[#718EBF]">
           {item.label}
         </p>
-        <p className="m-0 mt-[2px] sm:mt-1 font-[Inter] font-semibold text-[13px] leading-[16px] sm:text-[16px] sm:leading-[19px] xl:text-[20px] xl:leading-[24px] text-[#232323] truncate">
+        <p className="m-0 mt-[2px] sm:mt-1 font-[Inter] font-semibold text-[13px] leading-[16px] whitespace-nowrap overflow-hidden text-ellipsis sm:text-[16px] sm:leading-[19px] lg:text-[14px] lg:leading-[17px] xl:text-[18px] xl:leading-[24px] text-[#232323]">
           {item.value}
         </p>
       </div>
@@ -286,8 +286,8 @@ function LoansPage() {
   return <div className="w-full bg-[#F5F7FA]">
       <div className="xl:mx-4">
         {}
-        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 lg:gap-[20px] xl:gap-[30px]">
-          {loanTypes.map(item => <LoanTypeCard key={item.label} item={item} />)}
+        <div className="flex gap-3 overflow-x-auto pb-1 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:gap-4 lg:grid lg:grid-cols-4 lg:gap-[20px] lg:overflow-visible xl:gap-[30px]">
+          {loanTypes.map(item => <div key={item.label} className="w-[210px] shrink-0 snap-start sm:w-[240px] lg:w-auto"><LoanTypeCard item={item} /></div>)}
         </div>
 
         <div className="mt-[22px] lg:mt-[28px] xl:mt-[30px]">

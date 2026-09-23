@@ -314,8 +314,7 @@ function InvoicesSent() {
 function AccountsPage() {
   return <div className="@container w-full min-w-0 bg-[#F5F7FA]">
       <div className="@min-[1400px]:mx-4">
-        <div className="grid grid-cols-2 gap-4 @min-[768px]:gap-[25px] @min-[1400px]:grid-cols-4 @min-[1400px]:gap-[30px]">
-          {stats.map(item => <StatCard key={item.label} item={item} />)}
+<div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-[25px] lg:grid-cols-4 lg:gap-[25px] xl:gap-[30px]">            {stats.map(item => <StatCard key={item.label} item={item} />)}
         </div>
 
         <div className="mt-[22px] @min-[768px]:mt-[28px] @min-[1400px]:mt-[23px] grid gap-5 @min-[900px]:grid-cols-[minmax(0,2.08fr)_minmax(0,1fr)] @min-[900px]:gap-[25px] @min-[1400px]:grid-cols-[730px_350px] @min-[1400px]:gap-[30px]">
