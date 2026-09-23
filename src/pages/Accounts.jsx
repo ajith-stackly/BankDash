@@ -121,19 +121,19 @@ const chartData = [{
 function StatCard({
   item
 }) {
-  return <div className="h-[85px] @min-[768px]:h-[90px] @min-[1400px]:h-[120px] rounded-[15px] @min-[768px]:rounded-[20px] @min-[1400px]:rounded-[25px] bg-white flex items-center px-[17px] @min-[768px]:px-5 @min-[1400px]:px-6">
-      <div className="shrink-0 w-[45px] h-[45px] @min-[1400px]:w-[50px] @min-[1400px]:h-[50px] rounded-full flex items-center justify-center" style={{
+  return <div className="h-[80px] @min-[420px]:h-[85px] @min-[768px]:h-[90px] @min-[1400px]:h-[120px] rounded-[15px] @min-[768px]:rounded-[20px] @min-[1400px]:rounded-[25px] bg-white flex items-center px-[10px] @min-[420px]:px-[17px] @min-[768px]:px-5 @min-[1400px]:px-6 min-w-0">
+      <div className="shrink-0 w-[36px] h-[36px] @min-[420px]:w-[45px] @min-[420px]:h-[45px] @min-[1400px]:w-[50px] @min-[1400px]:h-[50px] rounded-full flex items-center justify-center" style={{
       background: item.bg,
       color: item.color
     }}>
-        <FontAwesomeIcon icon={item.icon} className="text-[19px] @min-[1400px]:text-[20px]" />
+        <FontAwesomeIcon icon={item.icon} className="text-[15px] @min-[420px]:text-[19px] @min-[1400px]:text-[20px]" />
       </div>
 
-      <div className="ml-[10px] @min-[768px]:ml-[12px] @min-[1400px]:ml-[14px] min-w-0">
-        <p className="m-0 font-[Inter] text-[12px] leading-[15px] text-[#718EBF] truncate">
+      <div className="ml-[8px] @min-[420px]:ml-[10px] @min-[768px]:ml-[12px] @min-[1400px]:ml-[14px] min-w-0 flex-1">
+        <p className="m-0 font-[Inter] text-[10px] leading-[12px] whitespace-nowrap overflow-hidden text-ellipsis @min-[420px]:text-[12px] @min-[420px]:leading-[15px] text-[#718EBF]">
           {item.label}
         </p>
-        <p className="m-0 mt-1 font-[Inter] font-semibold text-[16px] leading-[19px] @min-[1400px]:text-[25px] @min-[1400px]:leading-[30px] text-[#232323]">
+        <p className="m-0 mt-1 font-[Inter] font-semibold text-[14px] leading-[17px] whitespace-nowrap overflow-hidden text-ellipsis @min-[420px]:text-[16px] @min-[420px]:leading-[19px] @min-[1400px]:text-[25px] @min-[1400px]:leading-[30px] text-[#232323]">
           {item.value}
         </p>
       </div>
@@ -314,7 +314,8 @@ function InvoicesSent() {
 function AccountsPage() {
   return <div className="@container w-full min-w-0 bg-[#F5F7FA]">
       <div className="@min-[1400px]:mx-4">
-<div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-[25px] lg:grid-cols-4 lg:gap-[25px] xl:gap-[30px]">            {stats.map(item => <StatCard key={item.label} item={item} />)}
+        <div className="grid grid-cols-2 gap-4 @min-[768px]:gap-[25px] @min-[650px]:grid-cols-4 @min-[1400px]:gap-[30px]">
+          {stats.map(item => <StatCard key={item.label} item={item} />)}
         </div>
 
         <div className="mt-[22px] @min-[768px]:mt-[28px] @min-[1400px]:mt-[23px] grid gap-5 @min-[900px]:grid-cols-[minmax(0,2.08fr)_minmax(0,1fr)] @min-[900px]:gap-[25px] @min-[1400px]:grid-cols-[730px_350px] @min-[1400px]:gap-[30px]">

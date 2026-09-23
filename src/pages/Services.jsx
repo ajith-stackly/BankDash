@@ -78,19 +78,19 @@ const services = [{
 function TopServiceCard({
   item
 }) {
-  return <div className="h-[72px] sm:h-[85px] lg:h-[90px] xl:h-[120px] rounded-[12px] sm:rounded-[15px] lg:rounded-[20px] xl:rounded-[25px] bg-white flex items-center px-[14px] sm:px-[17px] lg:px-6 xl:px-8 min-w-0">
-      <div className="shrink-0 w-[38px] h-[38px] sm:w-[45px] sm:h-[45px] lg:w-[50px] lg:h-[50px] xl:w-[70px] xl:h-[70px] rounded-full flex items-center justify-center" style={{
+  return <div className="h-[72px] sm:h-[85px] lg:h-[90px] xl:h-[120px] w-full rounded-[12px] sm:rounded-[15px] lg:rounded-[18px] xl:rounded-[25px] bg-white flex items-center px-[14px] sm:px-[17px] lg:px-5 xl:px-8 min-w-0">
+      <div className="shrink-0 w-[38px] h-[38px] sm:w-[45px] sm:h-[45px] lg:w-[46px] lg:h-[46px] xl:w-[70px] xl:h-[70px] rounded-full flex items-center justify-center" style={{
       background: item.bg,
       color: item.color
     }}>
-        <FontAwesomeIcon icon={item.icon} className="text-[15px] sm:text-[18px] lg:text-[20px] xl:text-[28px]" />
+        <FontAwesomeIcon icon={item.icon} className="text-[15px] sm:text-[18px] lg:text-[18px] xl:text-[28px]" />
       </div>
 
-      <div className="ml-[12px] sm:ml-[16px] lg:ml-[20px] min-w-0">
-        <p className="m-0 font-[Inter] font-semibold text-[14px] leading-[17px] sm:text-[16px] sm:leading-[19px] xl:text-[20px] xl:leading-[24px] text-[#232323] truncate">
+      <div className="ml-[12px] sm:ml-[16px] lg:ml-[14px] xl:ml-[20px] min-w-0 flex-1">
+        <p className="m-0 font-[Inter] font-semibold text-[14px] leading-[17px] whitespace-nowrap overflow-hidden text-ellipsis sm:text-[16px] sm:leading-[19px] lg:text-[15px] lg:leading-[18px] xl:text-[20px] xl:leading-[24px] text-[#232323]">
           {item.label}
         </p>
-        <p className="m-0 mt-[2px] font-[Inter] text-[11px] leading-[13px] sm:text-[12px] sm:leading-[15px] xl:text-[16px] xl:leading-[19px] text-[#718EBF] truncate">
+        <p className="m-0 mt-[2px] font-[Inter] text-[11px] leading-[13px] whitespace-nowrap overflow-hidden text-ellipsis sm:text-[12px] sm:leading-[15px] lg:text-[11px] lg:leading-[13px] xl:text-[16px] xl:leading-[19px] text-[#718EBF]">
           {item.sub}
         </p>
       </div>
@@ -229,8 +229,8 @@ function ServicesPage() {
   return <div className="w-full bg-[#F5F7FA]">
       <div className="xl:mx-4">
         {}
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-[20px] xl:gap-[30px]">
-          {topServices.map(item => <TopServiceCard key={item.label} item={item} />)}
+        <div className="flex gap-3 overflow-x-auto pb-1 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:gap-4 lg:grid lg:grid-cols-3 lg:gap-[20px] lg:overflow-visible xl:gap-[30px]">
+          {topServices.map(item => <div key={item.label} className="w-[230px] shrink-0 snap-start sm:w-[260px] lg:w-auto"><TopServiceCard item={item} /></div>)}
         </div>
 
         <div className="mt-[22px] lg:mt-[28px] xl:mt-[30px]">
